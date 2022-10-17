@@ -1,0 +1,51 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void)
+{
+    string z = get_string("Input: ");
+    for (int length_of_string = 0; length_of_string < strlen(z);)
+    {
+        length_of_string++;
+        if (length_of_string == strlen(z))
+        {
+            length_of_string--;
+            if (atoi(&z[length_of_string]) < 4)
+            {
+                for (int j = 0; j < atoi(&z[length_of_string]); j ++)
+                {
+                    printf("I");
+                }
+                printf("\n");
+                return false;
+            }
+            else if(atoi(&z[length_of_string]) == 4)
+            {
+                printf("IV");
+            }
+            else if(atoi(&z[length_of_string]) == 5)
+            {
+                printf("V");
+            }
+            else if(atoi(&z[length_of_string]) < 9)
+            {
+                printf("V");
+                for (int k = 0; k < 3; k++)
+                {
+                    printf("I");
+                }
+                printf("\n");
+                return false;
+            }
+            else if(atoi(&z[length_of_string]) == 9)
+            {
+                printf("IX");
+            }
+        }
+        printf("\n");
+        return false;
+    }
+    return false;
+}
